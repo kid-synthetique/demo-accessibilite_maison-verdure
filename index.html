@@ -28,6 +28,9 @@
 
   TAILLES DE CLIC
   [D1] Icônes de réseaux sociaux 16×16px — zone de clic insuffisante
+
+  ATTRIBUTS
+  [E1] Newletter: Le label devrait être lié à un champs via l'attribut for
   ============================================================
 -->
 
@@ -96,8 +99,7 @@
                 <!-- Produit 2 -->
                 <article class="carte-produit">
                     <!-- [C2] Alt descriptif sur image décorative -->
-                    <img src="https://picsum.photos/seed/plante2/400/200" class="carte-produit-image"
-                        alt="Belle photo de plante verte en pot blanc sur fond beige ensoleillé">
+                    <img src="https://picsum.photos/seed/plante2/400/200" class="carte-produit-image">
                     <div class="carte-produit-corps">
                         <p class="produit-nom">Monstera deliciosa</p>
                         <p class="produit-desc">Plante tropicale aux feuilles découpées très tendance.</p>
@@ -110,7 +112,7 @@
 
                 <!-- Produit 3 -->
                 <article class="carte-produit">
-                    <img src="https://picsum.photos/seed/plante3/400/200" class="carte-produit-image" alt="Pothos doré">
+                    <img src="https://picsum.photos/seed/plante3/400/200" class="carte-produit-image">
                     <div class="carte-produit-corps">
                         <p class="produit-nom">Pothos doré</p>
                         <p class="produit-desc">Plante facile d'entretien, parfaite pour les débutants.</p>
@@ -139,6 +141,8 @@
             <h2>Restez informé·e</h2>
             <!-- [C5] Input sans label -->
             <div class="formulaire-newsletter">
+                <!-- [E1] Newletter: Le label devrait être lié à un champs via l'attribut for -->
+                <label>Votre adresse courriel</label>
                 <input type="email" class="champ-courriel" placeholder="Votre adresse courriel">
                 <button class="btn-newsletter">S'inscrire</button>
             </div>
