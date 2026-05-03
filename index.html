@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- 
+  ============================================================
+  PAGE DE DÉMO — ERREURS D'ACCESSIBILITÉ INTENTIONNELLES
+  À utiliser pour la démo Lighthouse / axe DevTools en classe.
+  
+  ERREURS PLANTÉES (par catégorie) :
+  
+  CONTRASTE
+  [A1] Texte de prix en gris très pâle (#bbb) sur blanc — ratio ~1.7:1
+  [A2] Badge "Solde" blanc sur jaune pâle — ratio ~1.4:1
+  [A3] Texte du footer en #999 sur fond #f0f0f0 — ratio ~2.8:1
+
+  FOCUS / CLAVIER
+  [B1] outline: none sur tous les éléments (*) — focus invisible
+  [B2] Div cliquable sans tabindex ni rôle — inaccessible au clavier
+  [B3] Lien "En savoir plus" sans href — non focusable
+
+  STRUCTURE SÉMANTIQUE
+  [C1] Image produit sans attribut alt
+  [C2] Image décorative avec alt descriptif inutile
+  [C3] Hiérarchie de titres brisée (h1 → h4, pas de h2/h3)
+  [C4] Bouton fait avec <div> au lieu de <button>
+  [C5] Champ de formulaire sans <label> associé
+  [C6] Langue de la page non déclarée (lang manquant sur <html>)
+
+  TAILLES DE CLIC
+  [D1] Icônes de réseaux sociaux 16×16px — zone de clic insuffisante
+  ============================================================
+-->
+
+<!-- [C6] lang manquant intentionnellement -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison verdure - Démo de l'audit sur l'accessibilité</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- EN-TÊTE -->
+    <header class="entete">
+        <div class="inner">
+            <span class="logo">Maison Verdure</span>
+            <nav>
+                <ul class="nav-principale">
+                    <li><a href="#">Boutique</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="inner">
+            <h1>Nouvelle collection printemps</h1>
+            <!-- [C3] h4 sans h2 ni h3 avant -->
+            <h4>Des pièces pensées pour durer</h4>
+            <!-- [B2] div cliquable sans tabindex ni role -->
+            <div class="hero-cta">Découvrir la collection</div>
+        </div>
+    </section>
+
+    <!-- GRILLE PRODUITS -->
+    <section class="section-produits">
+        <div class="inner">
+            <h2>Nos produits</h2>
+
+            <div class="grille">
+
+                <!-- Produit 1 -->
+                <article class="carte-produit">
+                    <!-- [C1] Image sans attribut alt -->
+                    <img src="https://picsum.photos/seed/plante1/400/200" class="carte-produit-image">
+                    <div class="carte-produit-corps">
+                        <!-- [A2] Badge avec contraste insuffisant -->
+                        <span class="badge-solde">Solde</span>
+                        <p class="produit-nom">Ficus lyrata</p>
+                        <p class="produit-desc">Grande plante d'intérieur aux larges feuilles brillantes.</p>
+                        <div class="produit-pied">
+                            <!-- [A1] Prix illisible -->
+                            <span class="produit-prix">89,00 $</span>
+                            <button class="produit-btn">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 2 -->
+                <article class="carte-produit">
+                    <!-- [C2] Alt descriptif sur image décorative -->
+                    <img src="https://picsum.photos/seed/plante2/400/200" class="carte-produit-image"
+                        alt="Belle photo de plante verte en pot blanc sur fond beige ensoleillé">
+                    <div class="carte-produit-corps">
+                        <p class="produit-nom">Monstera deliciosa</p>
+                        <p class="produit-desc">Plante tropicale aux feuilles découpées très tendance.</p>
+                        <div class="produit-pied">
+                            <span class="produit-prix">64,00 $</span>
+                            <button class="produit-btn">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 3 -->
+                <article class="carte-produit">
+                    <img src="https://picsum.photos/seed/plante3/400/200" class="carte-produit-image" alt="Pothos doré">
+                    <div class="carte-produit-corps">
+                        <p class="produit-nom">Pothos doré</p>
+                        <p class="produit-desc">Plante facile d'entretien, parfaite pour les débutants.</p>
+                        <div class="produit-pied">
+                            <span class="produit-prix">28,00 $</span>
+                            <!-- [C4] Bouton fait avec div -->
+                            <div class="produit-btn" style="cursor:pointer;">Ajouter</div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- [B3] Lien sans href -->
+            <p style="margin-top: 1rem; text-align: center;">
+                <a class="lien-fantome">En savoir plus sur nos produits</a>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section-newsletter">
+        <div class="inner">
+            <h2>Restez informé·e</h2>
+            <!-- [C5] Input sans label -->
+            <div class="formulaire-newsletter">
+                <input type="email" class="champ-courriel" placeholder="Votre adresse courriel">
+                <button class="btn-newsletter">S'inscrire</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="inner">
+            <!-- [A3] Texte avec contraste insuffisant -->
+            <p class="footer-texte">© 2026 Maison Verdure. Tous droits réservés.</p>
+            <div class="footer-liens">
+                <!-- [D1] Zones de clic trop petites -->
+                <a href="#" class="icone-sociale" aria-label="Instagram">IG</a>
+                <a href="#" class="icone-sociale" aria-label="Pinterest">PI</a>
+                <a href="#" class="icone-sociale" aria-label="Facebook">FB</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
