@@ -6,16 +6,16 @@
   PAGE DE DÉMO — ERREURS D'ACCESSIBILITÉ INTENTIONNELLES
   À utiliser pour la démo Lighthouse / axe DevTools en classe.
   
-  ERREURS PLANTÉES (par catégorie) :
+  ERREURS D'ACCESSIBILITÉ PLACÉES VOLONTAIREMENT POUR LA DÉMO (par catégorie) :
   
-  CONTRASTE
+  CONTRASTE ET LISIBILITÉ
   [A1] Texte de prix en gris très pâle (#bbb) sur blanc — ratio ~1.7:1
   [A2] Badge "Solde" blanc sur jaune pâle — ratio ~1.4:1
   [A3] Texte du footer en #999 sur fond #f0f0f0 — ratio ~2.8:1
 
   FOCUS / CLAVIER
   [B1] outline: none sur tous les éléments (*) — focus invisible
-  [B2] Div cliquable sans tabindex ni rôle — inaccessible au clavier
+  [B2] Bouton "Découvrir la collection" c'est une balise Div cliquable sans tabindex ni rôle, inaccessible au clavier
   [B3] Lien "En savoir plus" sans href — non focusable
 
   STRUCTURE SÉMANTIQUE
@@ -128,7 +128,7 @@
 
             <!-- [B3] Lien sans href -->
             <p style="margin-top: 1rem; text-align: center;">
-                <a class="lien-fantome">En savoir plus sur nos produits</a>
+                <a class="lien-fantome">En savoir plus sur nos produits →</a>
             </p>
 
         </div>
