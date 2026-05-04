@@ -298,6 +298,8 @@ label{
     color: #999;
     text-decoration: none;
     font-size: 0.75rem;
+    border: 1px solid #909090;
+    border-radius: 3px;
 }
 
 /* [B3] Lien sans href */
