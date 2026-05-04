@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="fr">
+
+<!-- [C5] lang manquant intentionnellement -->
+<html>
 
 <!-- 
   ============================================================
@@ -18,23 +20,22 @@
   [B2] Bouton "Découvrir la collection" c'est une balise Div cliquable sans tabindex ni rôle, inaccessible au clavier
   [B3] Lien "En savoir plus" sans href — non focusable
 
-  STRUCTURE SÉMANTIQUE
+  STRUCTURE SÉMANTIQUE ET ATTRIBUTS
   [C1] Image produit sans attribut alt
   [C2] Image décorative avec alt descriptif inutile
   [C3] Hiérarchie de titres brisée (h1 → h4, pas de h2/h3)
   [C4] Bouton fait avec <div> au lieu de <button>
-  [C5] Champ de formulaire sans <label> associé
-  [C6] Langue de la page non déclarée (lang manquant sur <html>)
+  [C5] Langue de la page non déclarée (lang manquant sur <html>)
+  [C6] Le formulaire est encadré par un <div> et non pas la balise <form>.
+  [C7] Le bouton "S'inscrire" devrait être un <button type="submit">, le type n'est pas identifié.
+  [C8] Le champs courriel devrait avoir un id et le label devrait être lié à ce champs l'attribut for="id-du-champs"
 
   TAILLES DE CLIC
   [D1] Icônes de réseaux sociaux 16×16px — zone de clic insuffisante
 
-  ATTRIBUTS
-  [E1] Newletter: Le label devrait être lié à un champs via l'attribut for
   ============================================================
 -->
 
-<!-- [C6] lang manquant intentionnellement -->
 
 <head>
     <meta charset="UTF-8">
@@ -138,13 +139,17 @@
     <!-- NEWSLETTER -->
     <section class="section-newsletter">
         <div class="inner">
-            <h2>Restez informé·e</h2>
-            <!-- [C5] Input sans label -->
+            <h2>Restez informé·e, abonnez-vous à notre infolettre!</h2>
+            <!-- [C6] Le formulaire est encadré par un div et non pas la balise form. -->
+
             <div class="formulaire-newsletter">
-                <!-- [E1] Newletter: Le label devrait être lié à un champs via l'attribut for -->
+                <!-- [C8] Le champs courriel devrait avoir un id et le label devrait être lié à ce champs l'attribut for="id-du-champs" -->
                 <label>Votre adresse courriel</label>
-                <input type="email" class="champ-courriel" placeholder="Votre adresse courriel">
-                <button class="btn-newsletter">S'inscrire</button>
+                <div>
+                    <input type="email" class="champ-courriel" placeholder="Courriel">
+                    <!-- [C7] Le bouton S'inscrire devrait être un <button type="submit">, le type n'est pas identifié. -->
+                    <button class="btn-newsletter">S'inscrire</button>
+                </div>
             </div>
         </div>
     </section>

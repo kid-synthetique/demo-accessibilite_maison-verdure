@@ -220,17 +220,26 @@ body {
 }
 
 .section-newsletter h2 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: normal;
     margin-bottom: 1rem;
 }
 
 .formulaire-newsletter {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 0.5rem;
     justify-content: center;
     max-width: 400px;
     margin: 0 auto;
+}
+label{
+    display: block;
+    margin-top: 1rem;
+    padding-left: 0.3rem;
+    opacity: 0.8;
 }
 
 /* [C5] Champ sans label associé */
